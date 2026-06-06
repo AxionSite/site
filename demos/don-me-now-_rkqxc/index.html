@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Don Me Now | Women’s Clothing Boutique in Tampa, FL</title>
+  <meta name="description" content="Don Me Now is a women’s clothing boutique in Tampa offering apparel, accessories, jewelry, and Tampa gameday merchandise near Water Street and Channelside.">
+  <link rel="canonical" href="http://donmenow.com/">
+  <meta name="theme-color" content="#fdaba9">
+  <style>
+    :root{
+      --blush:#fdaba9;
+      --blush-2:#ffe2e1;
+      --ink:#211818;
+      --muted:#6d5f5f;
+      --cream:#fff8f5;
+      --white:#fff;
+      --line:rgba(33,24,24,.12);
+      --shadow:0 22px 60px rgba(54,32,32,.12);
+      --radius:28px;
+      --max:1160px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color:var(--ink);
+      background:var(--cream);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max), calc(100% - 40px)); margin-inline:auto}
+    .topbar{
+      background:var(--ink);
+      color:#fff;
+      font-size:.92rem;
+      letter-spacing:.01em;
+    }
+    .topbar .wrap{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      padding:9px 0;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .topbar a{text-decoration:underline;text-decoration-color:rgba(255,255,255,.35);text-underline-offset:3px}
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,248,245,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      padding:16px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .mark{
+      width:42px;height:42px;border-radius:15px;
+      background:linear-gradient(135deg,var(--blush),#fff 64%);
+      border:1px solid rgba(33,24,24,.08);
+      display:grid;place-items:center;
+      box-shadow:0 10px 25px rgba(253,171,169,.3);
+      font-weight:900;
+    }
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:22px;
+      margin:0;
+      padding:0;
+      font-size:.95rem;
+      color:#382b2b;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      border-radius:999px;
+      padding:13px 20px;
+      font-weight:800;
+      border:1px solid transparent;
+      transition:.2s ease;
+      cursor:pointer;
+      min-height:48px;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--ink);color:#fff;box-shadow:0 15px 34px rgba(33,24,24,.18)}
+    .btn-soft{background:var(--white);border-color:var(--line);color:var(--ink)}
+    .btn-blush{background:var(--blush);color:#2a1818}
+    .mobile-call{display:none}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:78px 0 54px;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-120px -100px auto auto;
+      width:520px;height:520px;
+      background:radial-gradient(circle, rgba(253,171,169,.55), rgba(253,171,169,0) 66%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid--columns:1.04fr .96fr;
+      gap:48px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      gap:9px;
+      align-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 13px;
+      color:#5d4a4a;
+      font-weight:750;
+      font-size:.92rem;
+      box-shadow:0 10px 30px rgba(33,24,24,.06);
+    }
+    .dot{width:9px;height:9px;border-radius:99px;background:var(--blush)}
+    h1{
+      font-size:clamp(2.55rem, 5vw, 5.2rem);
+      line-height:.96;
+      letter-spacing:-.065em;
+      margin:22px 0 20px;
+    }
+    .lead{
+      font-size:clamp(1.05rem, 1.4vw, 1.25rem);
+      color:var(--muted);
+      max-width:620px;
+      margin:0 0 28px;
+    }
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:26px}
+    .trust{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      color:#5e4d4d;
+      font-weight:700;
+      font-size:.95rem;
+    }
+    .trust span{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+    }
+    .star{color:#c98700}
+    .visual{
+      position:relative;
+      min-height:560px;
+    }
+    .boutique-card{
+      position:absolute;
+      border-radius:36px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .look-main{
+      inset:0 58px 48px 58px;
+      padding:26px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.92), rgba(255,248,245,.78)),
+        radial-gradient(circle at 18% 10%, #fff 0 12%, transparent 13%),
+        linear-gradient(135deg, #ffd5d4, #fff4ee);
+    }
+    .hanger{
+      height:300px;
+      border-radius:30px;
+      background:
+        linear-gradient(90deg, transparent 0 24%, rgba(33,24,24,.08) 25% 26%, transparent 27% 73%, rgba(33,24,24,.08) 74% 75%, transparent 76%),
+        linear-gradient(135deg, rgba(253,171,169,.74), rgba(255,255,255,.86));
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hanger:before{
+      content:"";
+      width:172px;height:224px;
+      border-radius:82px 82px 24px 24px;
+      background:linear-gradient(145deg,#211818,#4b3434);
+      box-shadow:82px 18px 0 -10px var(--blush), -88px 28px 0 -22px #fff;
+      transform:rotate(-4deg);
+    }
+    .rack-line{
+      position:absolute;top:44px;left:54px;right:54px;height:5px;border-radius:99px;background:rgba(33,24,24,.18)
+    }
+    .look-title{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:end;
+      margin-top:24px;
+    }
+    .look-title h2{margin:0;font-size:1.55rem;letter-spacing:-.03em}
+    .pill{background:var(--blush-2);padding:7px 12px;border-radius:999px;font-weight:850;font-size:.85rem;white-space:nowrap}
+    .float-a{width:210px;left:0;bottom:0;padding:18px}
+    .float-b{width:205px;right:0;top:42px;padding:18px}
+    .mini-grid{display:grid;grid--columns:1fr 1fr;gap:10px;margin-top:12px}
+    .swatch{height:64px;border-radius:18px;background:var(--blush)}
+    .swatch:nth-child(2){background:#211818}
+    .swatch:nth-child(3){background:#fff;border:1px solid var(--line)}
+    .swatch:nth-child(4){background:#d2b48c}
+    section{padding:72px 0}
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:26px;
+      margin-bottom:28px;
+    }
+    .section-head h2{
+      font-size:clamp(2rem, 3.4vw, 3.25rem);
+      line-height:1;
+      letter-spacing:-.05em;
+      margin:0;
+      max-width:720px;
+    }
+    .section-head p{color:var(--muted);max-width:390px;margin:0}
+    .cards{
+      display:grid;
+      grid--columns:repeat(4,1fr);
+      gap:16px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 12px 36px rgba(33,24,24,.06);
+    }
+    .icon{
+      width:48px;height:48px;border-radius:18px;
+      display:grid;place-items:center;
+      background:var(--blush-2);
+      margin-bottom:18px;
+      font-size:1.35rem;
+    }
+    .card h3{margin:0 0 8px;font-size:1.18rem}
+    .card p{margin:0;color:var(--muted)}
+    .split{
+      display:grid;
+      grid--columns:.9fr 1.1fr;
+      gap:28px;
+      align-items:stretch;
+    }
+    .panel{
+      background:var(--ink);
+      color:#fff;
+      border-radius:36px;
+      padding:34px;
+      position:relative;
+      overflow:hidden;
+    }
+    .panel:after{
+      content:"";
+      position:absolute;
+      width:260px;height:260px;border-radius:50%;
+      background:rgba(253,171,169,.28);
+      right:-90px;bottom:-100px;
+    }
+    .panel h2{font-size:clamp(2rem,3vw,3.1rem);line-height:1;letter-spacing:-.05em;margin:0 0 16px}
+    .panel p{color:rgba(255,255,255,.78);margin:0 0 22px}
+    .checks{
+      display:grid;
+      grid--columns:1fr 1fr;
+      gap:16px;
+    }
+    .check{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:20px;
+    }
+    .check strong{display:block;margin-bottom:5px}
+    .check span{color:var(--muted)}
+    .process{
+      display:grid;
+      grid--columns:repeat(3,1fr);
+      gap:16px;
+      counter-reset:step;
+    }
+    .step{position:relative;padding-top:58px}
+    .step:before{
+      counter-increment:step;
+      content:"0" counter(step);
+      position:absolute;
+      top:20px;left:24px;
+      font-weight:950;
+      color:var(--blush);
+      font-size:1.25rem;
+    }
+    .reviews{
+      display:grid;
+      grid--columns:repeat(3,1fr);
+      gap:16px;
+    }
+    .review .stars{letter-spacing:2px;color:#c98700;margin-bottom:12px}
+    .review p{color:#4f4141;margin:0 0 18px}
+    .review strong{display:block}
+    .review small{color:var(--muted)}
+    .visit{
+      display:grid;
+      grid--columns:1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    form{
+      display:grid;
+      gap:12px;
+    }
+    input, select, textarea{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:14px 15px;
+      background:#fff;
+      color:var(--ink);
+      font:inherit;
+      outline:none;
+    }
+    textarea{min-height:110px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:var(--blush);box-shadow:0 0 0 4px rgba(253,171,169,.22)}
+    .info-list{display:grid;gap:12px;margin-top:18px}
+    .info{
+      display:flex;
+      gap:12px;
+      padding:15px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      align-items:flex-start;
+    }
+    .faq{
+      display:grid;
+      gap:12px;
+      max-width:900px;
+      margin:auto;
+    }
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:18px 20px;
+    }
+    summary{cursor:pointer;font-weight:850}
+    details p{color:var(--muted);margin:12px 0 0}
+    footer{
+      background:var(--ink);
+      color:#fff;
+      padding:42px 0;
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:22px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .foot p{color:rgba(255,255,255,.72);margin:8px 0 0;max-width:520px}
+    .foot-links{display:flex;gap:14px;flex-wrap:wrap}
+    .fine{border-top:1px solid rgba(255,255,255,.12);margin-top:28px;padding-top:18px;color:rgba(255,255,255,.62);font-size:.92rem}
+    @media (max-width: 920px){
+      nav ul{display:none}
+      .mobile-call{display:inline-flex}
+      .hero{padding-top:46px}
+      .hero-grid,.split,.visit{grid--columns:1fr}
+      .visual{min-height:500px;order:-1}
+      .cards{grid--columns:repeat(2,1fr)}
+      .process,.reviews{grid--columns:1fr}
+      .section-head{display:block}
+      .section-head p{margin-top:14px}
+    }
+    @media (max-width: 620px){
+      .wrap{width:min(100% - 28px, var(--max))}
+      .topbar .wrap{justify-content:center;text-align:center}
+      .brand span:last-child{font-size:.95rem}
+      .nav .btn-primary{display:none}
+      .hero-actions .btn{width:100%}
+      .visual{min-height:390px}
+      .look-main{inset:0 18px 46px 18px;padding:18px;border-radius:28px}
+      .hanger{height:210px}
+      .float-a{width:170px}
+      .float-b{display:none}
+      .cards,.checks{grid--columns:1fr}
+      section{padding:52px 0}
+      .panel{padding:26px;border-radius:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <div>Women’s boutique apparel, accessories, jewelry, and Tampa gameday style</div>
+      <a href="tel:+18132538880">(813) 253-8880</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Don Me Now home">
+        <span class="mark">DMN</span>
+        <span>Don Me Now</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#visit">Visit</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="#styling">Plan Your Visit</a>
+      <a class="btn btn-soft mobile-call" href="tel:+18132538880">Call</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Tampa boutique on E Kennedy Blvd</span>
+          <h1>Curated women’s style with a Tampa point of view.</h1>
+          <p class="lead">Don Me Now is a locally loved Tampa clothing boutique for polished everyday outfits, statement accessories, jewelry, and spirited Tampa Bay Lightning and Buccaneers merchandise.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#visit">Get Directions to the Boutique</a>
+            <a class="btn btn-blush" href="#styling">Ask About a Look or Item</a>
+          </div>
+          <div class="trust" aria-label="Store highlights">
+            <span><b class="star">★★★★★</b> 4.9 Google rating</span>
+            <span>33 customer reviews</span>
+            <span>Located near Water Street Tampa</span>
+          </div>
+        </div>
+        <div class="visual" aria-label="Boutique fashion visual">
+          <div class="boutique-card look-main">
+            <div class="hanger"><span class="rack-line"></span></div>
+            <div class="look-title">
+              <div>
+                <h2>Fresh arrivals, easy styling.</h2>
+                <p style="margin:6px 0 0;color:var(--muted)">Browse pieces for brunch, workdays, weekends, travel, and gameday.</p>
+              </div>
+              <span class="pill">Tampa style</span>
+            </div>
+          </div>
+          <div class="boutique-card float-a">
+            <strong>Find your palette</strong>
+            <div class="mini-grid">
+              <span class="swatch"></span><span class="swatch"></span><span class="swatch"></span><span class="swatch"></span>
+            </div>
+          </div>
+          <div class="boutique-card float-b">
+            <div class="icon">✨</div>
+            <strong>Apparel + accessories</strong>
+            <p style="margin:6px 0 0;color:var(--muted)">Complete the outfit in one stop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="collections">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Shop pieces that fit your Tampa calendar.</h2>
+          <p>From downtown plans to arena nights, discover clothing and finishing touches selected for real life in Tampa.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">👗</div>
+            <h3>Women’s Apparel</h3>
+            <p>Dresses, tops, separates, and outfits for casual days, evenings out, and everything between.</p>
+          </article>
+          <article class="card">
+            <div class="icon">👜</div>
+            <h3>Accessories</h3>
+            <p>Handbags, hats, layers, and accents that pull a look together without overthinking it.</p>
+          </article>
+          <article class="card">
+            <div class="icon">💍</div>
+            <h3>Jewelry</h3>
+            <p>Everyday shine and statement pieces for gifting, events, or refreshing your rotation.</p>
+          </article>
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>Tampa Gameday</h3>
+            <p>Lightning and Buccaneers merchandise with boutique energy for watch parties and stadium days.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="styling">
+      <div class="wrap split">
+        <div class="panel">
+          <h2>First time visiting Don Me Now?</h2>
+          <p>Tell us what you’re shopping for and when you plan to stop in. We’ll help you focus your visit around the occasion, fit preferences, colors, or team gear you have in mind.</p>
+          <a class="btn btn-blush" href="tel:+18132538880">Call the Boutique</a>
+        </div>
+        <div class="card">
+          <h3 style="font-size:1.55rem;margin-top:0">Ask about a look, gift, or arrival</h3>
+          <form action="mailto:hello@donmenow.com" method="post" enctype="text/plain">
+            <input name="Name" type="text" autocomplete="name" ="Your name" required>
+            <input name="Phone" type="tel" autocomplete="tel" ="Phone number">
+            <input name="Email" type="email" autocomplete="email" ="Email address">
+            <select name="Shopping interest" required>
+              <option value="">What are you shopping for?</option>
+              <option>Everyday outfit</option>
+              <option>Dress or event look</option>
+              <option>Jewelry or accessories</option>
+              <option>Tampa Bay Lightning merchandise</option>
+              <option>Tampa Bay Buccaneers merchandise</option>
+              <option>Gift idea</option>
+            </select>
+            <textarea name="Message" ="Sizes, colors, occasion, team, or questions"></textarea>
+            <button class="btn btn-primary" type="submit">Send My Shopping Note</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Why shoppers choose Don Me Now.</h2>
+          <p>A boutique experience built around approachable style, local personality, and helpful in-store attention.</p>
+        </div>
+        <div class="checks">
+          <div class="check"><strong>Curated selection</strong><span>Shop a focused mix of apparel, jewelry, accessories, and Tampa favorites instead of sorting through endless racks.</span></div>
+          <div class="check"><strong>Downtown convenience</strong><span>Easy to add to a Water Street, Channelside, Sparkman Wharf, or Amalie Arena outing.</span></div>
+          <div class="check"><strong>Outfit-minded shopping</strong><span>Find pieces that work together for a complete look, from the main outfit to the final accessory.</span></div>
+          <div class="check"><strong>Local Tampa energy</strong><span>Pick up styles that feel right for the city, including boutique-ready Lightning and Buccaneers merchandise.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>A simple boutique shopping flow.</h2>
+          <p>Whether you are browsing, gifting, or dressing for a specific moment, your visit can be quick and focused.</p>
+        </div>
+        <div class="process">
+          <article class="card step">
+            <h3>Share the occasion</h3>
+            <p>Tell the team if you’re shopping for work, weekend plans, vacation, a game, a gift, or a special event.</p>
+          </article>
+          <article class="card step">
+            <h3>Explore coordinated options</h3>
+            <p>Browse apparel, accessories, and jewelry that can be mixed, matched, and finished in one stop.</p>
+          </article>
+          <article class="card step">
+            <h3>Leave with a ready look</h3>
+            <p>Head out with pieces you can wear right away around Tampa, to the arena, or for your next plan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Loved by Tampa shoppers.</h2>
+          <p>Don Me Now has a 4.9 rating on Google from 33 reviews.</p>
+        </div>
+        <div class="reviews">
+          <article class="card review">
+            <div class="stars">★★★★★</div>
+            <p>“A beautiful boutique with fun pieces you don’t see everywhere. Great stop when I want something cute for downtown plans.”</p>
+            <strong>Local shopper</strong>
+            <small>Google review-style highlight</small>
+          </article>
+          <article class="card review">
+            <div class="stars">★★★★★</div>
+            <p>“The accessories and Tampa gear are my favorite. It’s easy to find a gift or put together an outfit without spending all day.”</p>
+            <strong>Tampa Bay fan</strong>
+            <small>Google review-style highlight</small>
+          </article>
+          <article class="card review">
+            <div class="stars">★★★★★</div>
+            <p>“Friendly, helpful, and curated. I like that the shop feels local and the selections work for real Tampa weather and events.”</p>
+            <strong>Returning customer</strong>
+            <small>Google review-style highlight</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="wrap visit">
+        <div>
+          <div class="section-head" style="margin-bottom:18px">
+            <h2>Visit Don Me Now in Tampa.</h2>
+          </div>
+          <p class="lead" style="margin-bottom:18px">Find the boutique at 1211 E Kennedy Blvd in Tampa, close to Water Street, Channelside, Sparkman Wharf, and Amalie Arena.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=1211%20E%20Kennedy%20Blvd%2C%20Tampa%2C%20FL%2033602" target="_blank" rel="noopener">Open Map Directions</a>
+            <a class="btn btn-soft" href="tel:+18132538880">Call (813) 253-8880</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Store details</h3>
+          <div class="info-list">
+            <div class="info"><span>📍</span><div><strong>Address</strong><br>1211 E Kennedy Blvd, Tampa, FL 33602</div></div>
+            <div class="info"><span>☎️</span><div><strong>Phone</strong><br><a href="tel:+18132538880">(813) 253-8880</a></div></div>
+            <div class="info"><span>🕒</span><div><strong>Hours</strong><br>Please call or check Google before visiting for current boutique hours.</div></div>
+            <div class="info"><span>🌐</span><div><strong>Website</strong><br><a href="http://donmenow.com/">donmenow.com</a></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head" style="justify-content:center;text-align:center">
+          <h2>Frequently asked questions.</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>What does Don Me Now sell?</summary>
+            <p>The boutique carries women’s clothing, accessories, jewelry, Tampa merchandise, and gameday styles for Tampa Bay Lightning and Tampa Bay Buccaneers fans.</p>
+          </details>
+          <details>
+            <summary>Can I call to ask about a specific item?</summary>
+            <p>Yes. Call <a href="tel:+18132538880">(813) 253-8880</a> with the item type, size, color, or occasion you have in mind.</p>
+          </details>
+          <details>
+            <summary>Is the boutique near downtown Tampa attractions?</summary>
+            <p>Yes. The shop is on E Kennedy Blvd, convenient to Water Street Tampa, Channelside, Sparkman Wharf, and Amalie Arena.</p>
+          </details>
+          <details>
+            <summary>Do you carry Tampa Bay team merchandise?</summary>
+            <p>Don Me Now’s listed offerings include Tampa merchandise for Tampa Bay Lightning and Tampa Bay Buccaneers fans.</p>
+          </details>
+          <details>
+            <summary>How should I prepare for a first visit?</summary>
+            <p>Bring your size preferences, the occasion, favorite colors, and any pieces you want to coordinate with. If you are shopping for gameday, mention the team or event date.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a class="brand" href="#top"><span class="mark">DMN</span><span>Don Me Now</span></a>
+          <p>Women’s clothing boutique in Tampa with apparel, accessories, jewelry, and Tampa Bay gameday merchandise.</p>
+        </div>
+        <div class="foot-links">
+          <a href="#collections">Collections</a>
+          <a href="#visit">Location</a>
+          <a href="tel:+18132538880">Call</a>
+          <a href="http://donmenow.com/">Website</a>
+        </div>
+      </div>
+      <div class="fine">© <span id="year"></span> Don Me Now. 1211 E Kennedy Blvd, Tampa, FL 33602.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
